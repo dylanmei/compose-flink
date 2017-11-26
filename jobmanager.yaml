@@ -1,0 +1,21 @@
+#
+# Common
+#
+
+jobmanager.rpc.address: jobmanager
+jobmanager.rpc.port: 6123
+jobmanager.heap.mb: 1024
+parallelism.default: 1
+
+#
+# Be explicit about ports Flink usually chooses randomly
+#
+
+blob.server.port: 6124
+query.server.port: 6125
+
+#
+# Web Frontend
+#
+
+jobmanager.web.port: 8081

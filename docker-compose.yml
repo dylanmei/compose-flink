@@ -1,0 +1,27 @@
+version: "2.1"
+services:
+  jobmanager:
+    image: flink:1.3.2
+    expose:
+    - "6123"
+    - "6124"
+    - "6125"
+    ports:
+    - "8081:8081"
+    command: "bin/jobmanager.sh start-foreground cluster"
+    volumes:
+    - ./jobmanager.yaml:/opt/flink/conf/flink-conf.yaml
+
+  taskmanager:
+    image: flink:1.3.2
+    expose:
+    - "6121"
+    - "6122"
+    - "6124"
+    - "6125"
+    depends_on:
+    - jobmanager
+    command: "bin/taskmanager.sh start-foreground cluster"
+    volumes:
+    - ./taskmanager.yaml:/opt/flink/conf/flink-conf.yaml
+

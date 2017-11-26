@@ -1,0 +1,24 @@
+#
+# Common
+#
+
+jobmanager.rpc.address: jobmanager
+
+taskmanager.hostname: taskmanager
+taskmanager.data.port: 6121
+taskmanager.rpc.port: 6122
+
+taskmanager.heap.mb: 1024
+taskmanager.numberOfTaskSlots: 1
+taskmanager.memory.preallocate: false
+
+taskmanager.exit-on-fatal-akka-error: true
+taskmanager.network.numberOfBuffers: 4096
+
+#
+# Be explicit about ports Flink usually chooses randomly
+#
+
+blob.server.port: 6124
+query.server.port: 6125
+
